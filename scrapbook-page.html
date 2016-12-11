@@ -1,0 +1,9 @@
+<scrapbook-list entries="scrapbookCtrl.entries" on-remove="scrapbookCtrl.remove(entry)">
+  <div class="row" ng-if="isEmpty">
+    <h2>No Results!</h2>
+    <p>There were no records found</p>
+  </div>
+
+  <scrapbook-entry entry="listing" ng-repeat="listing in list.entries" ng-class="{player:listing.video}">
+  </scrapbook-entry>
+</scrapbook-list>

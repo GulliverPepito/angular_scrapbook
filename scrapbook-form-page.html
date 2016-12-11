@@ -1,0 +1,26 @@
+<form name="embedForm" ng-submit="scrapbookFormCtrl.submit(embedForm.$valid, data.embed)" class="row">
+
+  <div class="field">
+    <label>Resource URL:</label>
+    <input type="url"
+           class="input text"
+           ng-model="data.url"
+           ng-model-options="{debounce: { default: 200 }}"
+           required />
+    <p>
+      Enter a Youtube URL, Instagram Photo or any website
+    </p>
+  </div>
+
+  <fieldset>
+    <scrapbook-embed-field 
+      input-url="data.url"
+      ng-model="data.embed" required></scrapbook-embed-field>
+  </fieldset>
+
+  <nav class="actions" ng-if="data.embed">
+    <div class="medium btn default">
+      <input type="submit" value="Create Posting" />
+    </div>
+  </nav>
+</form>
